@@ -17,7 +17,7 @@ function App() {
     {/* routing */}
       <BrowserRouter>
         <Routes>
-          <Route path="/home" element={<Home/>} />
+          <Route path="/" element={<Home/>} />
           <Route path="/editor/:roomId" element={<EditorPage/>} /> 
           {/* dynamic routing */}
         </Routes>

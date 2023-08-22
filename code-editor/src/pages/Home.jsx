@@ -36,6 +36,13 @@ const [username, setUsername] = useState("");
     })
   }
 
+
+  const handleInputEnter=(e)=>{
+     if(e.code==="Enter"){
+      joinRoom()
+     }
+  }
+
   return (
     <div className="text-white flex items-center justify-center h-screen">
       <div className="items-center justify-center bg-gray-800 p-4 m-5 rounded-xl max-w-fit ">
@@ -52,6 +59,7 @@ const [username, setUsername] = useState("");
             className="my-3 p-2 rounded-sm border-2 border-cyan-500 outline-none  text-slate-600"
             onChange={(e) => setRoomId(e.target.value)}
             value={roomId}
+            onKeyUp={handleInputEnter}
           />
           <input
             type="text"
@@ -59,8 +67,12 @@ const [username, setUsername] = useState("");
             className="my-3 p-2 rounded-sm border-2 border-cyan-500 outline-none  text-slate-600"
             onChange={(e) => setUsername(e.target.value)}
             value={username}
+            onKeyUp={handleInputEnter}
           />
-          <button className="bg-green-400 py-2 px-3  rounded-lg text-xl font-bold justify-end hover:bg-green-500 cursor-pointer transition ease-in-out delay-150  hover:-translate-x-1 hover:scale-110 w-20 ml-auto" onClick={joinRoom}>
+          <button
+            className="bg-green-400 py-2 px-3  rounded-lg text-xl font-bold justify-end hover:bg-green-500 cursor-pointer transition ease-in-out delay-150  hover:-translate-x-1 hover:scale-110 w-20 ml-auto"
+            onClick={joinRoom}
+          >
             Join
           </button>
           <span className="my-4 items-center">
